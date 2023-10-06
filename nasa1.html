@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School - Welcome to Our Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to My School</h1>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <h2>Welcome to Our School</h2>
+            <p id="overview"></p>
+        </section>
+
+        <section id="highlights">
+            <h2>School Highlights</h2>
+            <ul id="highlightsList"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My School</p>
+    </footer>
+
+    <script>
+        // Mock JSON data (replace with your actual JSON data)
+        const jsonData = 
+        {
+    "schoolName": "My School",
+    "schoolMotto": "Learning for a Bright Future",
+    "about": {
+        "overview": "My School is a place of excellence in education...",
+        "mission": "Our mission is to provide quality education...",
+        "vision": "Our vision is to inspire and empower..."
+    },
+    "programs": [
+        {
+            "programName": "Science Program",
+            "description": "Explore the world of science and innovation."
+        },
+        {
+            "programName": "Arts Program",
+            "description": "Nurture creativity and artistic talent."
+        },
+        {
+            "programName": "Sports Program",
+            "description": "Foster physical fitness and sportsmanship."
+        }
+    ],
+    "faculty": [
+        {
+            "name": "John Smith",
+            "position": "Principal",
+            "email": "john.smith@example.com",
+            "phone": "+1234567890"
+        },
+        {
+            "name": "Jane Doe",
+            "position": "Science Teacher",
+            "email": "jane.doe@example.com",
+            "phone": "+9876543210"
+        }
+    ],
+    "contact": {
+        "address": "123 School Street, Cityville",
+        "email": "info@myschool.com",
+        "phone": "+1234567890"
+    },
+    "facilities": [
+        {
+            "name": "Science Lab",
+            "description": "State-of-the-art science laboratory."
+        },
+        {
+            "name": "Library",
+            "description": "A vast collection of books and resources."
+        }
+    ],
+    "extracurricularActivities": [
+        "Chess Club",
+        "Drama Club",
+        "Soccer Team"
+    ]
+}
+
+        // Function to populate HTML elements with JSON data
+        function populateHTML() {
+            document.getElementById('overview').textContent = jsonData.about.overview;
+
+            const highlightsList = document.getElementById('highlightsList');
+            jsonData.programs.forEach(program => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${program.programName}: ${program.description}`;
+                highlightsList.appendChild(listItem);
+            });
+        }
+
+        // Call the function to populate HTML elements with data
+        populateHTML();
+    </script>
+</body>
+</html>
